@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>To-do List App</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tasks for the day</h1>
+
+        <!-- Form for adding tasks -->
+        <form id="taskForm">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+
+            <button type="submit">Add</button>
+        </form>
+
+        <!-- List of tasks -->
+        <ul id="taskList">
+
+
+        </ul>
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span id="closeModal" class="close">&times;</span>
+                <h2>Edit task</h2>
+                <form id="editForm">
+                    <label for="editTitle">Task title:</label>
+                    <input type="text" id="editTitle" name="editTitle" required>
+
+                    <label for="editDescription">Task description:</label>
+                    <textarea id="editDescription" name="editDescription"></textarea>
+
+                    <label for="editDone">Done:</label>
+                    <input class="checkbox" type="checkbox" id="editDone" name="editDone">
+
+                    <button type="submit">Save Changes</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
